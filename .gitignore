@@ -1,0 +1,56 @@
+# ── OS & System Files ─────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Editor & IDE ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Node (if you ever add a build tool) ───────────────────────
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+.npm
+
+# ── Build / Distribution ──────────────────────────────────────
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# ── Environment & Secrets ─────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Temporary Files ───────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# ── AI / Agent tooling ────────────────────────────────────────
+.codex/
+.agents/
+.gemini/
