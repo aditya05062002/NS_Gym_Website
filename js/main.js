@@ -120,14 +120,17 @@ async function submitContactForm() {
 
   const payload = { name, phone, email, interest, plan, message };
 
-  try {
-    await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+  // 1. Fire off the request to Google Apps Script in the background (don't await it)
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(err => console.error('Form background error:', err));
 
+  // 2. Give it a tiny artificial delay (600ms) so the user sees the loading spinner 
+  // and feels like it "processed", then instantly show success.
+  setTimeout(() => {
     showToast('success', "Message sent! We'll contact you within 24 hours. 💪");
 
     // Reset form
@@ -135,11 +138,7 @@ async function submitContactForm() {
     document.getElementById('cf-interest').value = '';
     document.getElementById('cf-plan').value = '';
 
-  } catch (err) {
-    showToast('error', 'Something went wrong. Please call us directly at 9156787806.');
-    console.error('Form error:', err);
-  } finally {
     btn.classList.remove('loading');
     btn.disabled = false;
-  }
+  }, 600);
 }
