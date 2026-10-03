@@ -214,7 +214,7 @@ nav {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: radial-gradient(circle at 40% 54%, rgba(0,229,255,0.2), transparent 42%);
+  background: none;
   pointer-events: none;
 }
 /* Mosaic gym image placeholders */
@@ -238,6 +238,7 @@ nav {
 }
 .hero-img-cell:first-child { grid-row: span 2; }
 .hero-img-cell img { width: 100%; height: 100%; object-fit: cover; }
+.hero-img-cell:first-child img { object-position: center 15%; }
 .hero-img-cell:nth-child(2) img { object-position: center top; }
 
 /* Placeholder gym images using gym-themed gradients */
