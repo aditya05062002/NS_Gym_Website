@@ -936,3 +936,23 @@ footer {
 
 
 
+
+/* -- LIGHT MODE HERO IMAGE FIX -- */
+html[data-theme="light"] .hero-img-wrap::before {
+  background:
+    linear-gradient(90deg,
+      rgba(248,250,252,0.75) 0%,
+      rgba(248,250,252,0.35) 10%,
+      rgba(248,250,252,0.05) 30%,
+      rgba(248,250,252,0.0)  65%,
+      rgba(248,250,252,0.55) 100%),
+    linear-gradient(180deg,
+      rgba(248,250,252,0.6)  0%,
+      rgba(248,250,252,0.0)  18%,
+      rgba(248,250,252,0.0)  78%,
+      rgba(248,250,252,0.6)  100%);
+}
+
+html[data-theme="light"] .hero-img-cell::after {
+  background: rgba(248,250,252,0.08);
+}
