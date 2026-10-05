@@ -142,3 +142,21 @@ async function submitContactForm() {
     btn.disabled = false;
   }, 600);
 }
+
+// ── FAQ TOGGLE (AI SNIPPET OPTIMIZED) ─────────────────────────
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+  
+  // Close all other FAQs
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.setAttribute('aria-expanded', 'false');
+    q.closest('.faq-item').classList.remove('open');
+  });
+
+  // Toggle current FAQ
+  if (!isExpanded) {
+    btn.setAttribute('aria-expanded', 'true');
+    item.classList.add('open');
+  }
+}
