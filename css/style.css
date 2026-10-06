@@ -143,7 +143,7 @@ nav {
 
 .hero-title {
   font-family: var(--display);
-  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-size: clamp(3.25rem, 6vw, 5.4rem);
   line-height: 0.95;
   letter-spacing: 1px;
   margin-bottom: 24px;
@@ -152,7 +152,7 @@ nav {
 
 .hero-desc {
   color: var(--muted); font-size: 1rem; line-height: 1.7;
-  max-width: 420px; margin-bottom: 36px;
+  max-width: 420px; margin-bottom: 30px;
 }
 
 .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
@@ -180,7 +180,7 @@ nav {
 
 .hero-tags {
   display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 36px;
+  margin-top: 30px;
 }
 .tag {
   padding: 6px 14px;
@@ -399,37 +399,35 @@ section { padding: 100px 60px; }
 
 /* ── WHY US ── */
 .why {
-  background: var(--bg2);
+  position: relative;
   overflow: hidden;
+  background: var(--bg2);
 }
 .why-inner {
-  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-  gap: 60px; align-items: center;
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  position: static;              /* important: lets the image anchor to .why */
 }
 .why-content { position: relative; z-index: 2; }
+
 .why-img {
-  width: 100%;
-  min-height: clamp(520px, 58vw, 720px);
-  justify-self: stretch;
-  border-radius: 0;
-  overflow: hidden;
-  background:
-    linear-gradient(90deg, var(--bg2) 0%, rgba(var(--bg2-rgb),0.72) 18%, rgba(var(--bg2-rgb),0.14) 44%, transparent 100%),
-    linear-gradient(180deg, var(--bg2) 0%, rgba(var(--bg2-rgb),0.12) 18%, rgba(var(--bg2-rgb),0.08) 72%, var(--bg2) 100%),
-    url("../img/Hero05.png") center right / contain no-repeat;
-  position: relative;
-  margin-right: -60px;
-}
-.why-img::before {
-  content: '';
   position: absolute;
-  inset: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);   /* vertically centred in the section */
+  width: 50%;                    /* right half, flush to the screen edge */
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   background:
-    radial-gradient(circle at 56% 56%, rgba(0,229,255,0.2), transparent 34%),
-    linear-gradient(135deg, rgba(0,229,255,0.12), transparent 48%);
-  pointer-events: none;
+    linear-gradient(90deg, var(--bg2) 0%, rgba(var(--bg2-rgb), 0) 35%),
+    linear-gradient(180deg, var(--bg2) 0%, transparent 15%, transparent 85%, var(--bg2) 100%),
+    url("../img/Hero05.png") center / cover no-repeat;
 }
+.why-img::before { display: none; }   /* removes the teal haze */
 .accordion { margin-top: 36px; }
 .acc-item {
   border-bottom: 1px solid var(--border);
@@ -921,7 +919,7 @@ footer {
   .about-inner, .why-inner { grid-template-columns: 1fr; gap: 40px; }
   .about-img-wrap { justify-self: center; }
   .about-img-wrap video { max-height: 520px; }
-  .why-img { min-height: 360px; margin: 0 -24px; }
+  .why-img { width: min(100%, 420px); justify-self: center; }
   .pricing-grid { grid-template-columns: 1fr; }
   .plan-card.featured {
   color: #0A0F12; transform: none; }
