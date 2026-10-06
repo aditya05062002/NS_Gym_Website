@@ -403,17 +403,21 @@ section { padding: 100px 60px; }
   overflow: hidden;
 }
 .why-inner {
-  display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
-  gap: 80px; align-items: start;
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 60px; align-items: center;
   position: relative;
 }
 .why-content { position: relative; z-index: 2; }
 .why-img {
-  min-height: 640px;
+  width: 100%;
+  min-height: clamp(520px, 58vw, 720px);
+  justify-self: stretch;
+  border-radius: 0;
+  overflow: hidden;
   background:
     linear-gradient(90deg, var(--bg2) 0%, rgba(var(--bg2-rgb),0.72) 18%, rgba(var(--bg2-rgb),0.14) 44%, transparent 100%),
     linear-gradient(180deg, var(--bg2) 0%, rgba(var(--bg2-rgb),0.12) 18%, rgba(var(--bg2-rgb),0.08) 72%, var(--bg2) 100%),
-    url("../img/Hero05.png") center/contain no-repeat;
+    url("../img/Hero05.png") center right / contain no-repeat;
   position: relative;
   margin-right: -60px;
 }
