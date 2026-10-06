@@ -413,7 +413,7 @@ section { padding: 100px 60px; }
   background:
     linear-gradient(90deg, var(--bg2) 0%, rgba(var(--bg2-rgb),0.72) 18%, rgba(var(--bg2-rgb),0.14) 44%, transparent 100%),
     linear-gradient(180deg, var(--bg2) 0%, rgba(var(--bg2-rgb),0.12) 18%, rgba(var(--bg2-rgb),0.08) 72%, var(--bg2) 100%),
-    url("../img/Hero05.png") center/cover no-repeat;
+    url("../img/Hero05.png") center/contain no-repeat;
   position: relative;
   margin-right: -60px;
 }
