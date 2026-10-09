@@ -703,12 +703,12 @@ section {
 }
 
 .why-img {
-  position: relative;
-  right: auto;
+  position: absolute;
+  right: 0;
   top: 100px;
-  transform: translateY(-50%);
-  /* vertically centred in the section */
-  width: 100;
+  /* lines up with "WHY CHOOSE US" (matches section padding-top) */
+  transform: none;
+  width: 50%;
   /* right half, flush to the screen edge */
   aspect-ratio: 4 / 3;
   border: 0;
@@ -1710,8 +1710,13 @@ footer {
   }
 
   .why-img {
-    width: min(100%, 420px);
-    justify-self: center;
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    justify-self: stretch;
+    margin-top: 24px;
   }
 
   .pricing-grid {
