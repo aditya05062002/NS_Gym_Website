@@ -705,8 +705,8 @@ section {
 .why-img {
   position: relative;
   right: auto;
-  top: auto;
-  transform: none;
+  top: 100px;
+  transform: translateY(-50%);
   /* vertically centred in the section */
   width: 100;
   /* right half, flush to the screen edge */
